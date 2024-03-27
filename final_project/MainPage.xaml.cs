@@ -76,7 +76,7 @@ namespace final_project
                 var selectedDataObject = objectManager.GetObjects().FirstOrDefault(d => d.Data == selectedDataObjectName);
                 if (selectedDataObject != null)
                 {
-                    outputLabel.Text = employeeManager.CreateEmployee(selectedDataObjectName, "password", "Nume Prenume", "IT", "Developer", DateTime.Now, selectedDataObject);
+                    outputLabel.Text = employeeManager.CreateEmployee(selectedDataObjectName, "password", "Nume Prenume", Department.Finance, Position.Engineer, DateTime.Now, selectedDataObject);
                 }
             }
         }

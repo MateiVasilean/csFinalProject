@@ -5,12 +5,12 @@
         public string Username { get; private set; }
         public string Password { get; set; }
         public string FullName { get; set; }
-        public string Department { get; set; }
-        public string Position { get; set; }
+        public Department Department { get; set; }
+        public Position Position { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DataObject DataObject { get; private set; }
 
-        public Employee(DataObject dataObject, string username, string password, string fullName, string department, string position, DateTime dateOfBirth)
+        public Employee(DataObject dataObject, string username, string password, string fullName, Department department, Position position, DateTime dateOfBirth)
         {
             if (dataObject == null)
             {
@@ -25,5 +25,28 @@
             DateOfBirth = dateOfBirth;
             DataObject = dataObject;
         }
+    }
+
+    public enum Department
+    {
+        HR = 1,
+        Finance = 2,
+        IT = 4,
+        Marketing = 8,
+        Operations = 16,
+        Sales = 32
+    }
+
+    public enum Position
+    {
+        CEO,
+        Manager,
+        Engineer,
+        Analyst,
+        Coordinator,
+        Specialist,
+        Accountant,
+        Administrator,
+        Secretary
     }
 }

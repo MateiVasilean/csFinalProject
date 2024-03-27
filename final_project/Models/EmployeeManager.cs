@@ -15,7 +15,7 @@
             this.objectManager = objectManager;
         }
 
-        public string CreateEmployee(string username, string password, string fullName, string department, string position, DateTime dateOfBirth, DataObject dataObject)
+        public string CreateEmployee(string username, string password, string fullName, Department department, Position position, DateTime dateOfBirth, DataObject dataObject)
         {
             if (dataObject == null)
             {
@@ -66,7 +66,7 @@
             List<string> foundEmployees = new List<string>();
             foreach (var employee in employees)
             {
-                if (employee.Username.Contains(keyword) || employee.FullName.Contains(keyword) || employee.Department.Contains(keyword))
+                if (employee.Username.Contains(keyword) || employee.FullName.Contains(keyword) || employee.Department.ToString().Contains(keyword))
                 {
                     foundEmployees.Add($"{employee.Username} - {employee.FullName} - {employee.Department}");
                 }
