@@ -2,6 +2,7 @@
 Makefile.in
 *.userprefs
 *.usertasks
+*.objs
 config.make
 config.status
 aclocal.m4
