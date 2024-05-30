@@ -3,20 +3,15 @@
     public class Employee
     {
         public string Username { get; private set; }
-        public string Password { get; set; }
+        public string Password { get; private set; }
         public string FullName { get; set; }
         public Department Department { get; set; }
         public Position Position { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public DataObject DataObject { get; private set; }
+        public DataObject DataObject { get; set; }
 
         public Employee(DataObject dataObject, string username, string password, string fullName, Department department, Position position, DateTime dateOfBirth)
         {
-            if (dataObject == null)
-            {
-                throw new ArgumentNullException(nameof(dataObject));
-            }
-
             Username = username;
             Password = password;
             FullName = fullName;
@@ -24,6 +19,11 @@
             Position = position;
             DateOfBirth = dateOfBirth;
             DataObject = dataObject;
+        }
+
+        public override string ToString()
+        {
+            return Username;
         }
     }
 

@@ -1,12 +1,15 @@
-﻿namespace final_project;
+﻿using final_project.Pages;
 
-public partial class App : Application
+namespace final_project
 {
-	public App()
-	{
-		InitializeComponent();
+    [Obsolete]
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+            MainPage = new LoginPage();
+        }
+    }
 }
-
